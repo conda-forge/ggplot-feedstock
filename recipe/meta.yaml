@@ -1,4 +1,4 @@
-{% set version = "0.9.4" %}
+{% set version = "0.9.5" %}
 
 package:
   name: ggplot
@@ -7,7 +7,7 @@ package:
 source:
   fn: ggplot-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/g/ggplot/ggplot-{{ version }}.tar.gz
-  md5: 0fbaa3123cb2d4b060b200a106340421
+  sha256: f77bbe9c2ae0c5f2a1ce339a2ab02409e211df055a93ccc013e05373f0077f4d
 
 build:
   number: 0
