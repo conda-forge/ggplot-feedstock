@@ -1,4 +1,6 @@
-{% set version = "0.9.7" %}
+{% set version = "0.10.0" %}
+{%set hash_type = "sha256" %}
+{%set hash_val = "ae92db3a1110fe60772872a091cf5d16b5dd6fef7faebf21f59c6c57e0a745b5" %}
 
 package:
   name: ggplot
@@ -7,7 +9,7 @@ package:
 source:
   fn: ggplot-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/g/ggplot/ggplot-{{ version }}.tar.gz
-  sha256: 31a7a16c37d72ab07a5c9dc5422b398adf96a27b812a56291a6573182ca65141
+  {{ hash_type }}: {{ hash_val }}
 
 build:
   number: 0
