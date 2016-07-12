@@ -43,7 +43,7 @@ requirements:
     - scipy
     - six
     - statsmodels
-    - icu  # [win and py34]
+    - icu  # [linux and py34]
     # The above is a workaround for a mystery issue with PyQT
 
 test:
