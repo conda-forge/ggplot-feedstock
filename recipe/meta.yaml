@@ -1,4 +1,6 @@
-{% set version = "0.9.4" %}
+{% set version = "0.10.1" %}
+{%set hash_type = "sha256" %}
+{%set hash_val = "4b17d5bc1a59433ecb3e7668541abf003274910688bfbe221a4aa10e7271ed4a" %}
 
 package:
   name: ggplot
@@ -7,10 +9,13 @@ package:
 source:
   fn: ggplot-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/g/ggplot/ggplot-{{ version }}.tar.gz
-  md5: 0fbaa3123cb2d4b060b200a106340421
+  {{ hash_type }}: {{ hash_val }}
+  patches:
+    - py3.patch  # [py3k]
+    # See 0e05e in the base repo; should be removed next version
 
 build:
-  number: 0
+  number: 1
   script: python setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
@@ -38,6 +43,8 @@ requirements:
     - scipy
     - six
     - statsmodels
+    - icu 
+    # The runtime req of icu is a workaround for a mystery issue with PyQT
 
 test:
   imports:
