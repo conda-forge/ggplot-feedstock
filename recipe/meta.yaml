@@ -40,8 +40,6 @@ requirements:
     - scipy
     - six
     - statsmodels
-    - icu
-    # The runtime req of icu is a workaround for a mystery issue with PyQT
 
 test:
   imports:
