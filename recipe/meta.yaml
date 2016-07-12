@@ -10,7 +10,7 @@ source:
   fn: ggplot-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/g/ggplot/ggplot-{{ version }}.tar.gz
   {{ hash_type }}: {{ hash_val }}
-  patch:
+  patches:
     - py3.patch  # [py3k]
     # See 0e05e in the base repo; should be removed next version
 
