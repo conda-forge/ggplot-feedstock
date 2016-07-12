@@ -10,9 +10,12 @@ source:
   fn: ggplot-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/g/ggplot/ggplot-{{ version }}.tar.gz
   {{ hash_type }}: {{ hash_val }}
+  patch:
+    - py3.patch  # [py3k]
+    # See 0e05e in the base repo; should be removed next version
 
 build:
-  number: 0
+  number: 1
   script: python setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
