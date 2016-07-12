@@ -43,8 +43,8 @@ requirements:
     - scipy
     - six
     - statsmodels
-    - icu  # [linux and py34]
-    # The above is a workaround for a mystery issue with PyQT
+    - icu 
+    # The runtime req of icu is a workaround for a mystery issue with PyQT
 
 test:
   imports:
