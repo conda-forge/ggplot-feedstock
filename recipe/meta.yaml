@@ -1,6 +1,6 @@
-{% set version = "0.10.8" %}
+{% set version = "0.10.9" %}
 {%set hash_type = "sha256" %}
-{%set hash_val = "5108f985ea72b6cb5a5934487f4016c0b7ccb553d2cdd3bf8b04000770b8cf6f" %}
+{%set hash_val = "b36fad620a6d4481b907bc2b84f84e95ac36a04977389d1da0fb18dfc4307264" %}
 
 package:
   name: ggplot
