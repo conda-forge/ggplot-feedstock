@@ -3,6 +3,7 @@
 {% set compress_type = "tar.gz" %}
 {%set hash_type = "sha256" %}
 {%set hash_val = "b01df3498865281730d137455df53fbd7b8c313dbdcc2a7275598f1f9df8dd08" %}
+{%set build_num = "1" %}
 
 package:
   name: {{ name|lower }}
@@ -14,7 +15,7 @@ source:
   {{ hash_type }}: {{ hash_val }}
 
 build:
-  number: 0
+  number: {{ build_num }}
   script: python setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
