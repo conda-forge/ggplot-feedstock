@@ -1,14 +1,16 @@
+{% set name = "ggplot" %}
 {% set version = "0.11.2" %}
+{% set compress_type = "tar.gz" %}
 {%set hash_type = "sha256" %}
 {%set hash_val = "b01df3498865281730d137455df53fbd7b8c313dbdcc2a7275598f1f9df8dd08" %}
 
 package:
-  name: ggplot
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: ggplot-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/g/ggplot/ggplot-{{ version }}.tar.gz
+  fn: {{ name }}-{{ version }}.{{ compress_type }}
+  url: https://pypi.io/packages/source/g/ggplot/ggplot-{{ version }}.{{ compress_type }}
   {{ hash_type }}: {{ hash_val }}
 
 build:
@@ -48,7 +50,11 @@ test:
 about:
   home: https://github.com/yhat/ggplot
   license: BSD 2-Clause
+  # license_file: No MANIFEST.in with LICENSE - see https://github.com/yhat/ggplot/pull/556
+  license_family: BSD
   summary: 'ggplot for python'
+  dev_url: https://github.com/yhat/ggplot
+  doc_url: https://github.com/yhat/ggplot/tree/master/docs
 
 extra:
   recipe-maintainers:
