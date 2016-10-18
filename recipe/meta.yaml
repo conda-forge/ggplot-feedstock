@@ -40,6 +40,7 @@ requirements:
     - numpy
     - pandas
     - patsy >=0.4
+    - pyqt >=4.0
     - scipy
     - six
     - statsmodels
