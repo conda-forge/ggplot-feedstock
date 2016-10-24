@@ -1,9 +1,9 @@
 {% set name = "ggplot" %}
-{% set version = "0.11.2" %}
+{% set version = "0.11.5" %}
 {% set compress_type = "tar.gz" %}
 {%set hash_type = "sha256" %}
-{%set hash_val = "b01df3498865281730d137455df53fbd7b8c313dbdcc2a7275598f1f9df8dd08" %}
-{%set build_num = "1" %}
+{%set hash_val = "48bbc9ea5987f815ad25856d76573506dbfe153ff696f026ce324582af56469f" %}
+{%set build_num = "0" %}
 
 package:
   name: {{ name|lower }}
