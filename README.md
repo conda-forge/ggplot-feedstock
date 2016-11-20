@@ -33,7 +33,6 @@ conda search ggplot --channel conda-forge
 ```
 
 
-
 About conda-forge
 =================
 
