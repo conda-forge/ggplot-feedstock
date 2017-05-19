@@ -1,36 +1,27 @@
 {% set name = "ggplot" %}
 {% set version = "0.11.5" %}
-{% set compress_type = "tar.gz" %}
-{%set hash_type = "sha256" %}
-{%set hash_val = "48bbc9ea5987f815ad25856d76573506dbfe153ff696f026ce324582af56469f" %}
-{%set build_num = "1" %}
+{% set bundle = "tar.gz" %}
+{% set hash_type = "sha256" %}
+{% set hash = "48bbc9ea5987f815ad25856d76573506dbfe153ff696f026ce324582af56469f" %}
+{% set build = 2 %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.{{ compress_type }}
-  url: https://pypi.io/packages/source/g/ggplot/ggplot-{{ version }}.{{ compress_type }}
-  {{ hash_type }}: {{ hash_val }}
+  fn: {{ name }}-{{ version }}.{{ bundle }}
+  url: https://pypi.io/packages/source/g/ggplot/ggplot-{{ version }}.{{ bundle }}
+  {{ hash_type }}: {{ hash }}
 
 build:
-  number: {{ build_num }}
+  number: {{ build }}
   script: python setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
   build:
     - python
     - setuptools
-    - brewer2mpl
-    - cycler
-    - matplotlib
-    - numpy
-    - pandas
-    - patsy >=0.4
-    - scipy
-    - six
-    - statsmodels
 
   run:
     - python
@@ -52,8 +43,8 @@ test:
 
 about:
   home: https://github.com/yhat/ggplot
+  license_file: LICENSE
   license: BSD 2-Clause
-  # license_file: No MANIFEST.in with LICENSE - see https://github.com/yhat/ggplot/pull/556
   license_family: BSD
   summary: 'ggplot for python'
   dev_url: https://github.com/yhat/ggplot
