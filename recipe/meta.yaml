@@ -1,35 +1,29 @@
-{% set name = "ggplot" %}
 {% set version = "0.11.5" %}
-{% set bundle = "tar.gz" %}
-{% set hash_type = "sha256" %}
-{% set hash = "48bbc9ea5987f815ad25856d76573506dbfe153ff696f026ce324582af56469f" %}
-{% set build = 2 %}
 
 package:
-  name: {{ name|lower }}
+  name: ggplot
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.{{ bundle }}
-  url: https://pypi.io/packages/source/g/ggplot/ggplot-{{ version }}.{{ bundle }}
-  {{ hash_type }}: {{ hash }}
+  url: https://pypi.io/packages/source/g/ggplot/ggplot-{{ version }}.tar.gz
+  sha256: 48bbc9ea5987f815ad25856d76573506dbfe153ff696f026ce324582af56469f
 
 build:
-  number: {{ build }}
-  script: python setup.py install --single-version-externally-managed --record=record.txt
+  number: 3
+  noarch: python
+  script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
-  build:
+  host:
     - python
-    - setuptools
-
+    - pip
   run:
     - python
     - brewer2mpl
     - cycler
     - matplotlib
     - numpy
-    - pandas
+    - pandas <=0.22.0
     - patsy >=0.4
     - pyqt 4.11.*
     - qt 4.8.*
