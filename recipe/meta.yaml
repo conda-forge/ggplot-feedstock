@@ -1,30 +1,22 @@
-{% set name = "ggplot" %}
 {% set version = "0.11.5" %}
-{% set bundle = "tar.gz" %}
-{% set hash_type = "sha256" %}
-{% set hash = "48bbc9ea5987f815ad25856d76573506dbfe153ff696f026ce324582af56469f" %}
-{% set build = 3 %}
 
 package:
-  name: {{ name|lower }}
+  name: ggplot
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.{{ bundle }}
-  url: https://pypi.io/packages/source/g/ggplot/ggplot-{{ version }}.{{ bundle }}
-  {{ hash_type }}: {{ hash }}
+  url: https://pypi.io/packages/source/g/ggplot/ggplot-{{ version }}.tar.gz
+  sha256: 48bbc9ea5987f815ad25856d76573506dbfe153ff696f026ce324582af56469f
 
 build:
+  number: 3
   noarch: python
-  number: {{ build }}
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
   host:
-    - pip
     - python
-    - setuptools
-
+    - pip
   run:
     - python
     - brewer2mpl
