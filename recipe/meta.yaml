@@ -23,7 +23,7 @@ requirements:
     - cycler
     - matplotlib
     - numpy
-    - pandas
+    - pandas <=0.22.0
     - patsy >=0.4
     - pyqt 4.11.*
     - qt 4.8.*
