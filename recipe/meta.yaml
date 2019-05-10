@@ -11,7 +11,7 @@ source:
 build:
   number: 4
   noarch: python
-  script: python -m pip install --no-deps --ignore-installed .
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   host:
@@ -19,17 +19,15 @@ requirements:
     - pip
   run:
     - python
-    - brewer2mpl
-    - cycler
-    - matplotlib
-    - numpy
-    - pandas <=0.22.0
-    - patsy >=0.4
-    - pyqt 4.11.*
-    - qt 4.8.*
-    - scipy
     - six
     - statsmodels
+    - brewer2mpl
+    - matplotlib
+    - scipy
+    - patsy >=0.4
+    - pandas <=0.22.0
+    - cycler
+    - numpy
 
 test:
   imports:
