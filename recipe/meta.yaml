@@ -9,7 +9,7 @@ source:
   sha256: 48bbc9ea5987f815ad25856d76573506dbfe153ff696f026ce324582af56469f
 
 build:
-  number: 4
+  number: 5
   noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
@@ -22,7 +22,7 @@ requirements:
     - six
     - statsmodels
     - brewer2mpl
-    - matplotlib
+    - matplotlib-base
     - scipy
     - patsy >=0.4
     - pandas <=0.22.0
